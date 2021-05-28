@@ -16,7 +16,13 @@ public class GameHandler : MonoBehaviour
     int score = 0;
     bool gameOver = false;
 
+    public static bool slowTime;
+    public static bool immortalityBonus;
 
+    public float slowTimeDelay;
+    float timeFromSlow;
+    public float immortalityDelay;
+    float timeFromimmortality;
 
     public GameObject[] healPointsArray;
     public static bool healthGained;
@@ -62,6 +68,17 @@ public class GameHandler : MonoBehaviour
         trapTriggered = false;
     }
 
+    public void SlowTimeActivated()
+    {
+        GameSpeed = 2;
+        if (timeFromSlow >= slowTimeDelay)
+        {
+            slowTime = false;
+            GameSpeed = 4;
+            timeFromSlow = 0;
+        }
+        timeFromSlow += Time.deltaTime;
+    }
 
     void Start()
     {
@@ -69,6 +86,9 @@ public class GameHandler : MonoBehaviour
 		GameSpeed = 4;
 
         healthGained = false;
+        trapTriggered = false;
+        slowTime = false;
+        immortalityBonus = false;
 
 	}
 
@@ -87,7 +107,10 @@ public class GameHandler : MonoBehaviour
 		}
         if (trapTriggered)
         {
-            TrapTriggered();
+            if (immortalityBonus = false)
+            {
+                TrapTriggered();
+            }
         }
         if (healthGained)
         {
