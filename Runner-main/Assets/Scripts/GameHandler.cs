@@ -80,6 +80,16 @@ public class GameHandler : MonoBehaviour
         timeFromSlow += Time.deltaTime;
     }
 
+    public void ImmortalityActivation()
+    {
+        if (timeFromimmortality >= immortalityDelay)
+        {
+            immortalityBonus = false;
+            timeFromimmortality = 0;
+        }
+        timeFromimmortality += Time.deltaTime;
+    }
+
     void Start()
     {
 		RestartMenuPanel.gameObject.SetActive(false);

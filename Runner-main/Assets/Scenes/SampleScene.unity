@@ -1073,10 +1073,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f1e9363aec8a4e8f46fda0a9971b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUps: []
-  difficulty: 0
-  delay: 0
-  spawnPoints: []
+  powerUps:
+  - {fileID: 8999703673980408378, guid: 8cfe67955eaee0d4eaf9fa24aa71b9b9, type: 3}
+  - {fileID: 7855200772832213383, guid: 5d1cf514b74eb424ba69713ac2cb09f7, type: 3}
+  difficulty: 10
+  delay: 6
+  spawnPoints:
+  - 3
+  - 2
 --- !u!4 &770476968
 Transform:
   m_ObjectHideFlags: 0
@@ -1085,7 +1089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770476966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3889213, y: 1.7307804, z: 0}
+  m_LocalPosition: {x: 20.56, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2179,6 +2183,8 @@ MonoBehaviour:
   RestartMenuPanel: {fileID: 1074805405}
   Player: {fileID: 1401075633}
   MaxValue: 10000
+  slowTimeDelay: 0
+  immortalityDelay: 0
   healPointsArray:
   - {fileID: 152897851}
   - {fileID: 2005539466}

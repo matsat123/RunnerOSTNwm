@@ -32,7 +32,17 @@ public class PlayerControler : MonoBehaviour
             GameHandler.trapTriggered = true;
             Debug.Log("GAZZZZZ");
         }
-    }
+        if (collision.gameObject.tag == "slowTimeBonus")
+        {
+			GameHandler.slowTime = true;
+			Destroy(collision.gameObject, 0);
+        }
+		if (collision.gameObject.tag == "immortalityBonus")
+		{
+			GameHandler.immortalityBonus = true;
+			Destroy(collision.gameObject, 0);
+		}
+	}
 
     void Start()
     {
