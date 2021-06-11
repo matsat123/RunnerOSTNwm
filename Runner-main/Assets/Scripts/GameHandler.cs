@@ -29,7 +29,8 @@ public class GameHandler : MonoBehaviour
     public int healthPoints = 3;
     public static bool trapTriggered;
 
-
+    public Text endText;
+    public int pointsToWin;
 
     public void HealthGained()
     {
@@ -95,6 +96,7 @@ public class GameHandler : MonoBehaviour
 		RestartMenuPanel.gameObject.SetActive(false);
 		GameSpeed = 4;
 
+        gameOver = false;
         healthGained = false;
         trapTriggered = false;
         slowTime = false;
@@ -125,6 +127,12 @@ public class GameHandler : MonoBehaviour
         if (healthGained)
         {
             HealthGained();
+        }
+        if (pointsToWin == PlayerControler.numberOfPoints)
+        {
+            endText.text = "VICTORY!!";
+            gameOver = true;
+            Player.SetActive(false);
         }
     }
 

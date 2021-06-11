@@ -14,11 +14,11 @@ public class PlayerControler : MonoBehaviour
 	private Rigidbody2D rb;
 	public float startingY;
 
-
 	public GameObject Stalker;
 	private Animator anim;
 
-
+	public Text points;
+	public static int numberOfPoints = 0;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -49,6 +49,7 @@ public class PlayerControler : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody2D>();
 		startingY = transform.position.y + 0.03f;
 
+		points.text = "0";
 		anim = Stalker.GetComponent<Animator>();
     }
 
